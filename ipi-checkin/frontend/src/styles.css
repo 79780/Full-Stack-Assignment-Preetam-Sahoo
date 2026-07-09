@@ -1,0 +1,101 @@
+/*
+ * Receiving-desk palette: cool slate paper, one deep teal for anything actionable, and
+ * three status colours that mean exactly one thing each. Specimen and manifest codes are
+ * set in a tabular monospace because a technician reads them character by character
+ * against a label on a bottle — that is legibility, not decoration.
+ */
+
+:root {
+  --paper: #f2f5f6;
+  --surface: #ffffff;
+  --surface-sunk: #f7f9fa;
+  --line: #dfe6e8;
+  --line-strong: #c8d3d6;
+
+  --ink: #14232b;
+  --ink-2: #4f6570;
+  --ink-3: #7d919b;
+
+  --teal: #0b6b6b;
+  --teal-deep: #085254;
+  --teal-wash: #e6f1f0;
+
+  --received: #10704e;
+  --received-wash: #e4f2ea;
+  --flagged: #a83a29;
+  --flagged-wash: #fbe9e5;
+  --pending: #5a6f7b;
+  --pending-wash: #eaeff1;
+
+  --radius: 6px;
+  --radius-sm: 4px;
+
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --shadow: 0 1px 2px rgb(20 35 43 / 6%), 0 1px 12px rgb(20 35 43 / 4%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Small uppercase labels that name a region or a column. */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
